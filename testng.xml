@@ -9,6 +9,7 @@
             <class name="com.example.tests.BaseTest"/>
             <class name="com.example.tests.ExampleRegTest"/>
             <class name="com.example.tests.ExampleTest"/>
+            <class name="com.example.tests.DataProviderTest"/>
         </classes>
     </test>
 
