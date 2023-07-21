@@ -1,20 +1,10 @@
 package com.example.tests;
 
+import com.examples.pages.HomePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.UnexpectedAlertBehaviour;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import java.time.Duration;
 
 public class ExampleTest extends BaseTest {
 
@@ -53,10 +43,13 @@ public class ExampleTest extends BaseTest {
     @Parameters({"browser", "username", "password"})
     @Test(alwaysRun = true, groups = "regression", priority = 0)
     public void test1(@Optional String br, @Optional String uname, @Optional String pass) {
+        
+        HomePage homePage = new HomePage();
+        homePage.submitForm();
+
         driver.findElement(By.xpath("//XPATH"));
         System.out.println("test1");
     }
-
 
     @Test(dependsOnMethods = "test2", alwaysRun = true, groups = {"smoke", "regression"}, timeOut = 5000, priority = 10)
     public void test2() {
