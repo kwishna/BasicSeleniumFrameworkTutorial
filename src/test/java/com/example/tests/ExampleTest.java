@@ -44,7 +44,7 @@ public class ExampleTest extends BaseTest {
     @Test(alwaysRun = true, groups = "regression", priority = 0)
     public void test1(@Optional String br, @Optional String uname, @Optional String pass) {
         
-        HomePage homePage = new HomePage();
+        HomePage homePage = new HomePage(driver);
         homePage.submitForm();
 
         driver.findElement(By.xpath("//XPATH"));
