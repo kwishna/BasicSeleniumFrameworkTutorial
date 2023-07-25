@@ -1,4 +1,4 @@
-package com.examples.ennums;
+package com.examples.pages;
 
 public class IceCreamMaker {
 

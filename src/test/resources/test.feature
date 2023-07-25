@@ -1,10 +1,12 @@
-Feature: Test
+Feature: Test Enum
 
-  Scenario Outline: 2-D arrya
-    Given Something
+  Scenario Outline: enum test
+    Given I navigate to home page
+    When I fill the form "<username>", "<password>"
+    Then I get error "<Error>"
 
     Examples:
-      | name    | address | home |  |
-      | Krishna | India   | Yes  |  |
-      | Krishna | India   | Yes  |  |
-      | Krishna | India   | Yes  |  |
+      | username | password | Error                                  |
+      |          | pass1    | UserMissingError                       |
+      | user2    |          | PasswordMissingError                   |
+      |          |          | UserMissingError, PasswordMissingError |
